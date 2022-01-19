@@ -52,6 +52,17 @@ const staticBooks = [
 export default function Home() {
   const [item, setItem] = useState(null);
 
+
+  // 1. GET ALL BOOKS FROM FIREBASE AND MAP THEM OUT
+
+  // 2. CREATE A ADD BOOK FUNCTION THAT WILL TRIGGER ONCLICK
+
+  //3. CREATE A DELETE BOOK FUNCTION THAT WILL TAKE A SINGLE BOOK ID TO DELETE IT
+
+  //4. CREATE A UPDATE BOOK FUNCTION THAT WILL TAKE NEW VALUES FOR A SPECIFIC BOOK ID
+
+
+
   return (
     <div>
       <Navbar />
