@@ -1,10 +1,12 @@
-// ADD FIREBASE FUNCTIONS
+// IMPORT CONTEXT ----------------------------------------------------------------
+import { useContext } from "react";
 
 export default function AddBooks() {
+  // NOTE: CONTEXT STATE FOR NEW BOOK INFORMATION
 
   return (
     <form className="py-16 space-y-8 divide-y bg-gray-50 divide-gray-200">
-      <div className="px-5 sm:px-10 max-w-7xl mx-auto">
+      <div className="px-5 max-w-7xl mx-auto">
         <div className="space-y-8 divide-y divide-gray-200">
           <div>
             <div>
@@ -31,6 +33,8 @@ export default function AddBooks() {
                   </span>
                   <input
                     type="text"
+                    // value={newTitle}
+
                     autoComplete="username"
                     className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300"
                   />
@@ -49,6 +53,8 @@ export default function AddBooks() {
                   </span>
                   <input
                     type="number"
+                    // value={newPrice}
+
                     autoComplete="username"
                     className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300"
                   />
@@ -67,6 +73,8 @@ export default function AddBooks() {
                   </span>
                   <input
                     type="text"
+                    // value={newImage}
+
                     autoComplete="username"
                     className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300"
                   />

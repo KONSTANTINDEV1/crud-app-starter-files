@@ -7,12 +7,18 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import AddBooks from "../components/AddBooks";
+import UpdateForm from "../components/UpdateForm";
 
 // ICONS ----------------------------------------------------------------
 import { RefreshIcon } from "@heroicons/react/outline";
 import { XCircleIcon } from "@heroicons/react/outline";
 
 // FIREBASE FUNCTIONS ----------------------------------------------------------------
+
+
+// STRIPE MODULES ----------------------------------------------------------------
+
+
 
 // STATIC PRODUCT DATA ----------------------------------------------------------------
 const staticBooks = [
@@ -50,17 +56,41 @@ const staticBooks = [
 ];
 
 export default function Home() {
+  // BOOKS COLLECTION & ITEM STATE
   const [item, setItem] = useState(null);
 
 
+  // UPDATING STATE
+
+
+  // NEW BOOK INPUT STATES
+
+
+  // NOTE: FIREBASE CODE STARTS HERE
   // 1. GET ALL BOOKS FROM FIREBASE AND MAP THEM OUT
 
-  // 2. CREATE A ADD BOOK FUNCTION THAT WILL TRIGGER ONCLICK
+
+  // 2. CREATE A ADD BOOK FUNCTION IN OTHER COMPONENT THAT WILL TRIGGER ONCLICK
+
 
   //3. CREATE A DELETE BOOK FUNCTION THAT WILL TAKE A SINGLE BOOK ID TO DELETE IT
 
-  //4. CREATE A UPDATE BOOK FUNCTION THAT WILL TAKE NEW VALUES FOR A SPECIFIC BOOK ID
+  //4. CREATE STATE FOR BOOK ID AND UPDATING TO TRIGGER MODAL
+  // 4.1 ADD TERNARY OPERATION TO CHECK IF UPDATING IS TRUE BEFORE RENDERING UPDATE FORM COMPONENT
+  // 4.2 ADD A CONDITION TO CHECK IF UPDATING STATE IS TRUE AND THEN SHOW MODAL
 
+
+  //4.3 CREATE RESET BOOK ID FUNCTION & PASS TO UPDATEFORM FOR WHEN USER CLOSES MODAL
+
+
+  // 4.4 CREATE A UPDATE BOOK FUNCTION THAT WILL TAKE NEW VALUES FOR A SPECIFIC BOOK ID AND UPDATE THE RELEVANT INFORMATION
+
+
+  // NOTE: STRIPE CODE STARTS HERE
+  //5. CREATE ONCLICK ON BUY BUTTON TO SET ITEM WITH [{ title, price, img }]
+  //6. FUNCTION TO CREATE CHECKOUT SESSION WHEN USER CLICKS BUY BUTTON
+
+  //7. FIRE OFF CHECKOUT SESSION ONCE SINGLE ITEM STATE HAS BEEN UPDATED
 
 
   return (
@@ -110,7 +140,7 @@ export default function Home() {
                   </div>
                   <div className="flex space-x-2">
                     <button
-                      // disabled={item}
+                      disabled={item}
                       className={`mt-6 ${
                         item ? "cursor-not-allowed" : ""
                       } w-full`}
@@ -127,8 +157,7 @@ export default function Home() {
                     </button>
                     <div className="flex w-1/2 space-x-1">
                       <button
-                        // disabled={item}
-                        // onClick={() => deleteBook(id)}
+                        disabled={item}
                         className={`mt-6 ${
                           item ? "cursor-not-allowed" : ""
                         } w-1/2`}
@@ -143,8 +172,7 @@ export default function Home() {
                         </span>
                       </button>
                       <button
-                        // disabled={item}
-                        // onClick={() => setBookId(id)}
+                        disabled={item}
                         className={`mt-6 ${
                           item ? "cursor-not-allowed" : ""
                         } w-1/2`}
@@ -167,7 +195,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <AddBooks />
+      <AddBooks  />
       <Footer />
     </div>
   );
